@@ -19,4 +19,11 @@ public class User {
     @Column(name="user_email")
     private String userEmail;
 
+    @Column(name="user_picture")
+    private String userPicture;
+
+;
+
+
+
 }

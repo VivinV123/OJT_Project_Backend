@@ -10,12 +10,24 @@ import javax.persistence.*;
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="product_code")
-    private String productCode;
+    @Column(name="product_id")
+    private String productId;
 
     @Column(name="product_name")
     private String productName;
 
     @Column(name="product_price")
     private Double productPrice;
+
+    @Column(name="product_img")
+    private String productImg;
+
+    @Column(name="product_desc")
+    private String  productDesc;
+
+    @Column(name="product_category")
+    private String  productCategory;
+
+    @Column(name="product_brand")
+    private String  productBrand;
 }
