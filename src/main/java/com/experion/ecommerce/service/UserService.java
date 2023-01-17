@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface UserService {
-    JSONObject getToken(UserPost request) throws ParseException;
+    UserPost getToken(UserPost request) throws ParseException;
 
 
 }

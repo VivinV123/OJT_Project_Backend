@@ -29,7 +29,7 @@ public class UserController {
     UserDao userDao;
 
     @PostMapping("/user_token")
-    public JSONObject getToken(@RequestBody UserPost request) throws ParseException {
+    public UserPost getToken(@RequestBody UserPost request) throws ParseException {
         logger.info("User Token Generated");
         return userService.getToken(request);
     }

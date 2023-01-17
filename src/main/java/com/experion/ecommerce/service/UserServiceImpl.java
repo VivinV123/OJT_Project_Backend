@@ -18,8 +18,8 @@ public class UserServiceImpl implements UserService {
 @Autowired
         private UserDao userDao;
         @Override
-        public JSONObject getToken(UserPost token) throws ParseException {
-                String[] chunks = token.getUserToken().split("\\.");
+        public UserPost getToken(UserPost userPost) throws ParseException {
+                String[] chunks = userPost.getUserToken().split("\\.");
                 Base64.Decoder decoder = Base64.getUrlDecoder();
                 String payloads = new String(decoder.decode(chunks[1]));
                 JSONParser parser = new JSONParser(JSONParser.MODE_JSON_SIMPLE);
@@ -30,7 +30,7 @@ public class UserServiceImpl implements UserService {
                 user.setUserEmail(jsonResponse.getAsString("email"));
                 user.setUserPicture(jsonResponse.getAsString("picture"));
                 userDao.save(user);
-                return jsonResponse;
+                return userPost;
         }
 
 }
